@@ -1,0 +1,42 @@
+[package]
+name = "teams-agent-bridge"
+version = "0.1.0"
+description = "Modular desktop application for joining meetings with AI agents"
+authors = ["you"]
+license = ""
+repository = ""
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+tauri = { version = "1.5", features = [ "http-all", "shell-open"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+regex = "1"
+open = "5.0"
+
+
+# MCP Server
+rmcp = { version = "0.16", features = ["server", "transport-streamable-http-server"] }
+axum = "0.7"
+tokio = { version = "1", features = ["full"] }
+tokio-util = { version = "0.7", features = ["rt"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["trace"] }
+reqwest = { version = "0.11", features = ["json", "native-tls"] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

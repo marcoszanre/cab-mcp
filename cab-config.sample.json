@@ -1,0 +1,101 @@
+{
+  "config": {
+    "speech": {
+      "region": "eastus2",
+      "key": "$env:CAB_SPEECH_KEY"
+    },
+    "acs": {
+      "endpoint": "https://your-acs-resource.unitedstates.communication.azure.com/",
+      "accessKey": "$env:CAB_ACS_KEY"
+    },
+    "openai": {
+      "endpoint": "https://your-openai-resource.openai.azure.com",
+      "apiKey": "$env:CAB_OPENAI_KEY",
+      "deployment": "gpt-4o"
+    }
+  },
+  "meetingBehavior": {
+    "autoLeave": {
+      "enabled": true,
+      "timeoutMinutes": 5,
+      "warningBeforeLeaveMs": 60000
+    }
+  },
+  "mcpConfig": {
+    "apiKey": "auto-generated-on-first-launch",
+    "port": 3100,
+    "autoStart": true,
+    "maxConcurrentSessions": 10,
+    "sessionRetentionMinutes": 5
+  },
+  "agents": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "name": "My Copilot Agent",
+      "type": "copilot-studio",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "preprocessing": {
+        "enabled": true,
+        "ttsOptimization": true
+      },
+      "postprocessing": {
+        "enabled": true,
+        "formatLinks": true
+      },
+      "voiceName": "en-US-JennyNeural",
+      "ttsStyle": "chat",
+      "speechRate": 1,
+      "styleDegree": 1.3,
+      "captionResponseAsChat": false,
+      "settings": {
+        "clientId": "your-app-client-id",
+        "tenantId": "your-tenant-id",
+        "environmentId": "your-environment-id",
+        "botId": "your-bot-id",
+        "botName": "My Copilot Agent"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-0000-000000000002",
+      "name": "My Foundry Agent",
+      "type": "azure-foundry",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "preprocessing": {
+        "enabled": true,
+        "ttsOptimization": true
+      },
+      "postprocessing": {
+        "enabled": true,
+        "formatLinks": true
+      },
+      "voiceName": "en-US-JennyNeural",
+      "ttsStyle": "chat",
+      "speechRate": 1,
+      "styleDegree": 1.3,
+      "captionResponseAsChat": false,
+      "settings": {
+        "projectEndpoint": "https://your-project.services.ai.azure.com/api/projects/your-project",
+        "agentName": "your-agent-name",
+        "tenantId": "your-tenant-id",
+        "clientId": "your-service-principal-client-id",
+        "clientSecret": "$env:CAB_FOUNDRY_CLIENT_SECRET",
+        "region": "eastus2",
+        "displayName": "My Foundry Agent"
+      },
+      "welcomeConfig": {
+        "mode": "custom",
+        "staticMessage": "Hi there, please let me know once ready to start."
+      },
+      "proactiveConfig": {
+        "enabled": true,
+        "instructions": "You are an interviewer. Please follow the agent guidance.",
+        "silenceThresholdMs": 2000,
+        "responseChannel": "speech",
+        "turnTakingMode": "interview-safe",
+        "autoLeaveOnCompletion": true,
+        "goodbyeMessage": "Thanks for your participation!",
+        "goodbyeChannel": "both"
+      }
+    }
+  ]
+}

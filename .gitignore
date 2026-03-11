@@ -1,0 +1,41 @@
+# Ignore Node modules
+node_modules/
+
+# Ignore build outputs
+dist/
+build/
+src-tauri/target/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore logs
+*.log
+npm-debug.log*
+
+# Ignore environment files
+.env
+.env.local
+.env.*
+*.env
+e2e/.env*
+
+# Ignore configuration files with credentials
+credentials.json
+config.local.json
+sample-config.json
+*-config.json
+!cab-config.sample.json
+test-settings.json
+
+# Test outputs
+test-results/
+coverage/
