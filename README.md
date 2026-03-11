@@ -1,18 +1,23 @@
 # Community Agent Bridge (CAB)
 
-<p align="center">
-  <img src="images/logo_new.png" alt="Community Agent Bridge" width="120" />
-</p>
+   <p align="center">
+     <img src="images/logo_new.png" alt="Community Agent Bridge" width="120" />
+   </p>
 
-> **MCP-First AI Agent Bridge for Microsoft Teams Meetings**
+   > **MCP-First AI Agent Bridge for Microsoft Teams Meetings**
 
-A desktop application that enables AI agents to join and participate in Microsoft Teams meetings. Built with Tauri (Rust + React), it exposes an MCP (Model Context Protocol) server over HTTP Streamable transport with API key authentication, allowing remote MCP clients to orchestrate agent participation programmatically.
+   A desktop application that enables AI agents to join and participate in Microsoft Teams meetings. Built with Tauri (Rust + React), it exposes an MCP (Model Context Protocol) server over HTTP Streamable
+  transport with API key authentication, allowing remote MCP clients to orchestrate agent participation programmatically.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+   <p align="center">
+     <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a>
+     &nbsp;&nbsp;
+     <a href="https://youtu.be/J40XPG40QNE"><img src="https://img.shields.io/badge/▶%20Watch%20Demo-FF0000?style=flat&logo=youtube&logoColor=white" alt="Watch Demo" /></a>
+   </p>
 
----
+   ---
 
-## Table of Contents
+   ## Table of Content
 
 - [Overview](#overview)
 - [Features](#features)
