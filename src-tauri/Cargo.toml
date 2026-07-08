@@ -1,0 +1,49 @@
+[package]
+name = "teams-agent-bridge"
+version = "0.2.0"
+description = "Modular desktop application for joining meetings with AI agents"
+authors = ["you"]
+license = ""
+repository = ""
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", features = ["preserve_order"] }
+regex = "1"
+open = "5.0"
+keyring = { version = "3", features = ["windows-native"] }
+
+# Coding agent (GitHub Copilot CLI) SDK — uses the installed CLI, no bundled binary
+github-copilot-sdk = { version = "1", default-features = false }
+async-trait = "0.1"
+
+
+# MCP Server
+rmcp = { version = "2.1", features = ["server", "transport-streamable-http-server"] }
+axum = "0.8"
+tokio = { version = "1", features = ["full"] }
+tokio-util = { version = "0.7", features = ["rt"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4"] }
+tower = "0.5"
+tower-http = { version = "0.6", features = ["trace"] }
+reqwest = { version = "0.12", features = ["json", "native-tls"] }
+tauri-plugin-http = "2"
+tauri-plugin-shell = "2"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

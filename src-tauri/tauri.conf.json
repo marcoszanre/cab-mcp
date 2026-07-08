@@ -1,0 +1,42 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173"
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico",
+      "icons/icon.png"
+    ]
+  },
+  "productName": "Community Agent Bridge",
+  "mainBinaryName": "Community Agent Bridge",
+  "version": "0.2.0",
+  "identifier": "com.communityagentbridge.app",
+  "plugins": {},
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "Community Agent Bridge",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 800,
+        "minHeight": 600,
+        "useHttpsScheme": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src ipc: http://ipc.localhost 'self' https://login.microsoftonline.com https://*.communication.azure.com wss://*.communication.azure.com https://*.skype.com wss://*.skype.com https://*.trouter.com wss://*.trouter.com https://*.trouter.skype.com wss://*.trouter.skype.com https://*.teams.microsoft.com wss://*.teams.microsoft.com https://teams.microsoft.com https://turn.azure.com https://*.turn.azure.com https://*.relay.azure.com https://*.blob.core.windows.net https://*.tts.speech.microsoft.com wss://*.tts.speech.microsoft.com https://*.stt.speech.microsoft.com wss://*.stt.speech.microsoft.com https://*.speech.microsoft.com wss://*.speech.microsoft.com https://*.cognitiveservices.azure.com wss://*.cognitiveservices.azure.com https://*.api.cognitive.microsoft.com https://*.openai.azure.com https://*.services.ai.azure.com https://ai.azure.com https://*.powerplatform.com https://*.api.powerplatform.com https://*.environment.api.powerplatform.com https://*.botframework.com wss://*.botframework.com https://*.azureedge.net; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' blob:;"
+    }
+  }
+}
